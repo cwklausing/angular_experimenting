@@ -1,0 +1,42 @@
+<!--makes html able to identify the application-->
+<!doctype html>
+<html ng-app="myApp">
+<head>
+    <title>My Angular App</title>
+    <link href="styles.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="scripts.js"></script>
+</head>
+
+<body>
+<div class="left">
+    <h1>The Great Angular Experiment</h1>
+    <label for="name">Enter a name:</label>
+    <input type="text" ng-model="person.name" name="name" id="name" ng-init="person.name='Rando Person'"/>
+    <p>{{person.name}}</p>
+</div>
+
+<div class="right" ng-controller="connortroller">
+    <button type="button" ng-Click="changeName()">Actors</button>
+    <p class="actorName">{{clickName}}</p>
+    <p>Eta People</p>
+    <ul>
+        <li ng-repeat="name in classList">{{name.name}}</li>
+    </ul>
+</div>
+
+
+</body>
+</html>
+
+
+<!--
+    Angular evaluates {{}} once on load, then continues to update
+
+    ngHide/ngShow - hide/show an element based on truthy eval
+    ngIf -- add/remove
+    ngClick:
+        <button type="button" ng-click="ANY JAVASCRIPT">Click</button>
+    ng-init: can set an array or value.
+    ng-repeat: iterates over an array
+-->
